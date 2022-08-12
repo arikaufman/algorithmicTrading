@@ -8,21 +8,17 @@ Created on Thu Jun 23 11:06:25 2022
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
-import datetime  # For datetime objects
-import os.path  # To manage paths
-
 # Import the backtrader platform
 import backtrader as bt
-import matplotlib
-matplotlib.use('QT5Agg')
 
-# Create a Stratey
+
+# Collect Data (Pairs Trading requires two data streams, the rest require one data stream.)
 class DataCollection():
     def collectData(self, cerebro):
-        
+
         datalist = [
-            ('C:/Users/arikaufm/Documents/BacktraderSample/datas/V.csv', 'Visa'),
-            ('C:/Users/arikaufm/Documents/BacktraderSample/datas/MA.csv', 'Mastercard')
+            ('C:/Development/algorithmicTrading/datas/V.csv', 'Visa'),
+            ('C:/Development/algorithmicTrading/datas/MA.csv', 'Mastercard')
         ]
 
         for i in range(len(datalist)):
