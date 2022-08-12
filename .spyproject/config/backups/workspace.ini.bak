@@ -1,0 +1,10 @@
+[workspace]
+restore_data_on_startup = True
+save_data_on_exit = True
+save_history = True
+save_non_project_files = False
+
+[main]
+version = 0.2.0
+recent_files = ['..\\..\\.spyder-py3\\temp.py', '..\\..\\Downloads\\BacktraderSample-master\\BacktraderSample-master\\AnalyzerSuite.py', '..\\..\\Downloads\\BacktraderSample-master\\BacktraderSample-master\\DataCollection.py', '..\\..\\Downloads\\BacktraderSample-master\\BacktraderSample-master\\main.py', '..\\..\\Downloads\\BacktraderSample-master\\BacktraderSample-master\\PythonConfiguration.py', '..\\..\\Downloads\\BacktraderSample-master\\BacktraderSample-master\\README.md', '..\\..\\Downloads\\BacktraderSample-master\\BacktraderSample-master\\TestStrategy.py', '..\\..\\Downloads\\BacktraderSample-master\\BacktraderSample-master\\TestStrategy2.py', '..\\..\\Downloads\\BacktraderSample-master\\BacktraderSample-master\\TestStrategyBenchmark.py']
+
