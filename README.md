@@ -5,7 +5,7 @@ Experimenting with Algo Trading using Backtrader Python Module.
 [1 File Structure Information](#File-Structure-Information)  
 [2 Pairs Trading](#Pairs-Trading)  
 [2.1 Background](#Background)  
-[2.2 Experimentation](#Experimentation)   
+[2.2 Results](#Results)   
 
 ## File Structure Information:
 ### main.py 
@@ -42,7 +42,7 @@ INSERT IMAGE
 
 From here, I can obtain securities with high cointegration, and use the pairs trading model to indetifiy entry and exit points. The model I built builds an ordinary least squares regression between the two securities in question. When the model has a positive z-score above an upper limit, you should short stock 1, and buy stock 2, selling out when the upper-limit band is reached (and we've reached mean-reversion). In contrast, when the model has a negative z-score below a lower limit, you should short stock 2, and buy stock 1, selling out when the lower-limit band is reached (and we've reached mean-reversion).
 
-### Example Results
+### Results
 Using a correlated pair (Visa, Mastercard) the following results were obtained:
 INSERT IMAGE OF VISA MASTERCARD
 
