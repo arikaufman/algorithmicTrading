@@ -56,6 +56,6 @@ Using a cointegrated pair (WTI Crude Oil, Brent Crude Oil) the following results
 
 ### Position Sizing
 ![Figure_5](assets/Figure_5.png)
-![Figure_5_1](assets/Figure_5.png)
+![Figure_5_1](assets/Figure_5.1.png)
 
 ### Further Thoughts
