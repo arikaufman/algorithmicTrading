@@ -6,6 +6,8 @@ Experimenting with Algo Trading using Backtrader Python Module.
 [2 Pairs Trading](#Pairs-Trading)  
 [2.1 Background](#Background)  
 [2.2 Results](#Results)   
+[2.3 Position Sizing](#Position-Sizing)  
+[3 Further Thoughts](#Further-Thoughts)  
 
 ## File Structure Information:
 ### main.py 
