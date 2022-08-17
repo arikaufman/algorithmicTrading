@@ -1,9 +1,6 @@
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 import backtrader as bt
-import strategies.TestStrategy as TestStrategy
-import strategies.TestStrategy2 as TestStrategy2
-import strategies.TestStrategyBenchmark as TestStrategyBenchmark
 import strategies.PairsTradingStrategy as PairsTradingStrategy
 import common.AnalyzerSuite as AnalyzerSuite
 import common.DataCollection as DataCollection
@@ -18,8 +15,6 @@ if __name__ == '__main__':
 
     # Set our desired cash start
     cerebro.broker.setcash(100000.0)
-    # Add a FixedSize sizer according to the stake
-    cerebro.addsizer(bt.sizers.FixedSize, stake=10) #CHANGEME
     # Set the commission
     cerebro.broker.setcommission(commission=0.001)
 
@@ -30,7 +25,7 @@ if __name__ == '__main__':
     # Analyzer
     AnalyzerSuite.AnalyzerSuite.defineAnalyzers(AnalyzerSuite, cerebro)
     # Run over everything
-    thestrats = cerebro.run()
+    thestrats = cerebro.run(stdstats=True)
 
     # -----------------------------------------------------------------------------------
 

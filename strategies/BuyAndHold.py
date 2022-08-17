@@ -7,7 +7,7 @@ import backtrader as bt
 import backtrader.indicators as btind
 
 
-class TestStrategyBenchmark(bt.Strategy):
+class BuyAndHold(bt.Strategy):
     '''This is a long-only strategy which operates on a moving average cross
 
     Note:
