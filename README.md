@@ -83,6 +83,8 @@ If you've made it this far, I'd love to tell you how far I've come on these addi
 
 ### References
 https://www.educba.com/pairs-trading/
+
 https://blog.quantinsti.com/pairs-trading-basics/#:~:text=The%20most%20common%20test%20for,of%20the%20variables%20is%20stationary.
+
 https://hudsonthames.org/an-introduction-to-cointegration/
 
