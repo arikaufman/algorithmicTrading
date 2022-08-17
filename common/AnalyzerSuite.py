@@ -15,5 +15,3 @@ class AnalyzerSuite():
         return {'DrawDown': thestrat.analyzers.mydrawdown.get_analysis()['max']['drawdown'],
                 'Sharpe Ratio:': thestrat.analyzers.mysharpe.get_analysis()['sharperatio'],
                 'Returns:': thestrat.analyzers.myreturn.get_analysis()['rnorm100']}
-
-  

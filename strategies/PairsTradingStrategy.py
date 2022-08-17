@@ -122,7 +122,7 @@ class PairsTradingStrategy(bt.Strategy):
             else:
                 x = int(value2 / (self.data0.close))  # Find the number of shares for Stock1
                 y = int(value1 / (self.data1.close))  # Find the number of shares for Stock2
-            
+
             # Place the order
             #print('zscore is', self.zscore[0])
             print('BUY CREATE %s, price = %.2f, qty = %d' % ("Visa", self.data0.close[0], x + self.qty1))
