@@ -52,6 +52,7 @@ The following notable parameters were used to obtain these results:
 * Period of 20 days
 * Only one position open at a time
 * Positions sized at 50% Long, 50% Short
+* Entire set tested over 10 year span
 
 Using a correlated pair (Visa, Mastercard) the following results were obtained:
 ![Figure_3](assets/Figure_3.png)
