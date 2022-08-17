@@ -47,11 +47,15 @@ From here, I can obtain securities with high cointegration, and use the pairs tr
 
 ### Results
 Using a correlated pair (Visa, Mastercard) the following results were obtained:
-INSERT IMAGE OF VISA MASTERCARD
+![Figure_3](assets/Figure_3.png)
+![Figure_3_1](assets/Figure_3.1.png)
 
 Using a cointegrated pair (WTI Crude Oil, Brent Crude Oil) the following results were obtained:
-INSERT IMAGE OF BRENT WTI
+![Figure_4](assets/Figure_4.png)
+![Figure_4_1](assets/Figure_4.1.png)
 
 ### Position Sizing
 ![Figure_5](assets/Figure_5.png)
+![Figure_5_1](assets/Figure_5.png)
+
 ### Further Thoughts
