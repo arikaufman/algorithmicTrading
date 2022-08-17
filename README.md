@@ -74,7 +74,7 @@ Clearly, the results have improved greatly, still without any specific parameter
 
 ### Further Thoughts
 Some extensions I would like to make (and may continue to edit privately):
-* A software to hunt for more cointegrated pairs, specifically in commodoties
+* A system to hunt for more cointegrated pairs, specifically in commodoties
 * Develop a methodology to deduce the best trade across multiple conflicting indicators in a set of cointegrated pairs
 * More robust position sizing based off of moving averages of not only the stock itself, but how far off the industry average that stock is
 * Actual implementation using interactive broker account, beginning with a paper account, and then a small investment portfolio
