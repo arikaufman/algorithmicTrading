@@ -31,16 +31,23 @@ At first, I tried incrementally deducing Pearson's Coefficients for different pa
 INSERT IMAGE
 When this was inserted into my model, however, I was obtaining strange results, and the correlated stocks were not always mean reverting. I did a bit more reading and found that I should be using cointegration to deduce my security pairs.
 
-Correlation shows the linear association between two random variables, or bivariate data. In contrast, two sets of variables are cointegrated, if a linear combination of those variables has a lower order of integration. If a linear combination of the collection is integrated of order less than d ( Where d is the individual series integrations), a set is said to be cointegrated. Cointegration is far more powerful than corrrelation, as it avoids the possibility of spurious correlation. This is when two or more events/variables are associated, but not casually related, due to coincidence, or the presence of a third, unseen variable.
+Correlation shows the linear association between two random variables, or bivariate data. In contrast, two sets of variables are cointegrated, if a linear combination of those variables has a lower order of integration. The word "integration" refers to the integrated time series or order d, denoted by I(d). Now, price, rate, yield data can all be assumed as I(1), while returns, can be assumed as I(0) series. An I(0) series is referred to as stationary, which implied that the meanm and variance of the time series are finite and do not change with time. Thus, to solve for co-integration, we say:
 
-Thus, instead, I ran the Dicky Fuller test on the spread, gives pValue as the result. If the pValue was less than 0.05 we can say with 95% conidence that the securities are cointegrated. The results of this test is shown below:
+$x_t$ and $y_t$ are cointegrated ,if $x_t$ and $y_t$ are $I(1)$ series and $EB$ such that $z_t = x_t - By_t$ is an $I(0)$ series.
+
+So, if there exists this value beta, we can say the series are co-integrated. Cointegration is far more powerful than corrrelation, as it avoids the possibility of spurious correlation. This is when two or more events/variables are associated, but not casually related, due to coincidence, or the presence of a third, unseen variable.
+
+To solve for the existence of co-integration, the Dicky Fuller test can be run. If the pValue was less than 0.05 we can say with 95% conidence that the securities are cointegrated (A few other conditions were checked as well in the ```DataPreProcessing.py -> ADFTEST.py``` function. The results of this test are shown below for WTI crude oil and Brent crude oil, a classic co-integrated pair from date range (2012-02-22 to 2022-02-22):
 INSERT IMAGE
 
-Now, I can obtain securities with high cointegration, and use the pairs trading model to indetifiy entry and exit points. The model I built builds an ordinary least squares regression between the two securities in question. When the model has a positive z-score above an upper limit, you should short stock 1, and buy stock 2, selling out when the upper-limit band is reached (and we've reached mean-reversion). In contrast, when the model has a negative z-score below a lower limit, you should short stock 2, and buy stock 1, selling out when the lower-limit band is reached (and we've reached mean-reversion).
+From here, I can obtain securities with high cointegration, and use the pairs trading model to indetifiy entry and exit points. The model I built builds an ordinary least squares regression between the two securities in question. When the model has a positive z-score above an upper limit, you should short stock 1, and buy stock 2, selling out when the upper-limit band is reached (and we've reached mean-reversion). In contrast, when the model has a negative z-score below a lower limit, you should short stock 2, and buy stock 1, selling out when the lower-limit band is reached (and we've reached mean-reversion).
 
-### Parameter Tuning
-With no parameter tuning, the following data was obtained:
-INSERT IMAGE OF FIRST RUN NO PARAMETER TUNING
+### Example Results
+Using a correlated pair (Visa, Mastercard) the following results were obtained:
+INSERT IMAGE OF VISA MASTERCARD
+
+Using a cointegrated pair (WTI Crude Oil, Brent Crude Oil) the following results were obtained:
+INSERT IMAGE OF BRENT WTI
 
 ### Position Sizing
 
