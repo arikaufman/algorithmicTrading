@@ -16,7 +16,7 @@ if __name__ == '__main__':
     # Set our desired cash start
     cerebro.broker.setcash(100000.0)
     # Set the commission
-    cerebro.broker.setcommission(commission=0.001)
+    #cerebro.broker.setcommission(commission=0.001)
 
     # ------------------------------------------------------------------------------------
 

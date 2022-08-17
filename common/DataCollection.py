@@ -18,8 +18,8 @@ import backtrader as bt
 class DataCollection():
     def collectData(self, cerebro):
         datalist = [
-            ('C:/Development/algorithmicTrading/datas/V.csv', 'Visa'),
-            ('C:/Development/algorithmicTrading/datas/MA.csv', 'Mastercard')
+            ('C:/Development/algorithmicTrading/datas/WTI2012022.csv', 'DIA'),
+            ('C:/Development/algorithmicTrading/datas/BRNT.L20122022.csv', 'SPY')
         ]
 
         for i in range(len(datalist)):

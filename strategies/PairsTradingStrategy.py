@@ -18,14 +18,14 @@ import math
 
 class PairsTradingStrategy(bt.Strategy):
     params = dict(
-        period=15,
+        period=20,
         stake=10,
         qty1=0,
         qty2=0,
-        upper=2.6,
-        lower=-2.2,
-        up_medium=0.72,
-        low_medium=-0.18,
+        upper=2.5,
+        lower=-2.5,
+        up_medium=0.5,
+        low_medium=-0.5,
         status=0,
         portfolio_value=100000,
         stop_loss=3.0
