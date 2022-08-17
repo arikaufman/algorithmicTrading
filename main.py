@@ -1,7 +1,7 @@
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 import backtrader as bt
-import strategies.PairsTradingStrategy as PairsTradingStrategy
+import strategies.PairsTradingStrategy as Pairs
 import common.AnalyzerSuite as AnalyzerSuite
 import common.DataCollection as DataCollection
 
@@ -10,7 +10,7 @@ if __name__ == '__main__':
     # Create a cerebro entity
     cerebro = bt.Cerebro()
     # Add a strategy
-    cerebro.addstrategy(PairsTradingStrategy.PairTradingStrategy)
+    cerebro.addstrategy(Pairs.PairsTradingStrategy)
     DataCollection.DataCollection.collectData(DataCollection, cerebro)
 
     # Set our desired cash start

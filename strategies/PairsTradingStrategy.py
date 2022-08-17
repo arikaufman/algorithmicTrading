@@ -16,7 +16,7 @@ import backtrader.feeds as btfeeds
 import backtrader.indicators as btind
 import math
 
-class PairTradingStrategy(bt.Strategy):
+class PairsTradingStrategy(bt.Strategy):
     params = dict(
         period=15,
         stake=10,
