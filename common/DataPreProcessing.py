@@ -10,8 +10,8 @@ import yfinance as yf
 class DataPreProcessing():
     def dataCollect(pearson):
         if pearson:
-            f = open('C:/Development/algorithmicTrading/datas/WCP.csv')
-            f2 = open('C:/Development/algorithmicTrading/datas/SGY.csv')
+            f = open('C:/Development/algorithmicTrading/datas/V.csv')
+            f2 = open('C:/Development/algorithmicTrading/datas/MA.csv')
             csv_reader = csv.reader(f)
             csv_reader2 = csv.reader(f2)
             #data to store data -> price mappings, and average price for pearson formula
@@ -82,7 +82,7 @@ class DataPreProcessing():
         plt.plot(xValues[10:], yValues[10:])
         plt.xlabel('Date/Time')
         plt.ylabel('Pearson Coefficient')
-        plt.title('WCP vs SGY Pearson Coeff.')
+        plt.title('V vs MA Pearson Coeff.')
         plt.xticks([1, 20, 40, 60, 80, 100, 120 ])
         plt.show()
 
@@ -94,11 +94,13 @@ class DataPreProcessing():
         #run the adfuller test by passing residuals of the regression as the input, store the result in computation
         computationResults = ts.adfuller(result.resid)
 
+        print("WTI vs BRNT.L")
         print ("Significance Level:", computationResults[0] )
         print ("pValue is:", computationResults[1] )
         print ("Critical Value Parameters", computationResults[4] )
 
-        if computationResults[0] <= computationResults[4]['10%']  and computationResults[1]<= 0.1:
+        if computationResults[0] <= computationResults[4]['10%']  and computationResults[1]<= 0.05:
+            print("Given Sig Level <= Critical Value @ 10%, and pValue <= 0.05")
             print ("Co-integrated")
 
 
@@ -107,6 +109,6 @@ class DataPreProcessing():
 
 data = DataPreProcessing.dataCollect(False)
 DataPreProcessing.ADFTest(data)
-#DataPreProcessing.incrementalPearsonCorrelationCalculator(returnValues[0], returnValues[1], 20)
+#DataPreProcessing.incrementalPearsonCorrelationCalculator(data[0], data[1], 20)
 
 
