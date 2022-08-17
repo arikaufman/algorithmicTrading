@@ -1,6 +1,12 @@
 # algorithmicTrading
 Experimenting with Algo Trading using Backtrader Python Module.
 
+# Table of Contents
+[1 File Structure Information](#File-Structure-Information)  
+[2 Pairs Trading](#Pairs-Trading)  
+[2.1 Background](#Background)  
+[2.2 Experimentation](#Experimentation)   
+
 ## File Structure Information:
 ### main.py 
 Takes in a strategy class, a data collection class, and sets the broker cash amount, stake, and commission. It also displays the plot of both the data and trading style, along with the analysis values themselves. In main.py, feel free to edit the:
