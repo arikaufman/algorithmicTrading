@@ -46,6 +46,13 @@ To solve for the existence of co-integration, the Dicky Fuller test can be run. 
 From here, I can obtain securities with high cointegration, and use the pairs trading model to identify entry and exit points. The model I built uses an ordinary least squares regression between the two securities in question. When the model has a positive z-score above an upper limit, you should short stock 1, and buy stock 2, selling out when the upper-limit band is reached (and we've reached mean-reversion). In contrast, when the model has a negative z-score below a lower limit, you should short stock 2, and buy stock 1, selling out when the lower-limit band is reached (and we've reached mean-reversion).
 
 ### Results
+The following notable parameters were used to obtain these results:
+* Enter at Z-Score of +/- 2.5
+* Exit at Z-Score of +/- 0.5
+* Period of 20 days
+* Only one position open at a time
+* Positions sized at 50% Long, 50% Short
+
 Using a correlated pair (Visa, Mastercard) the following results were obtained:
 ![Figure_3](assets/Figure_3.png)
 ![Figure_3_1](assets/Figure_3.1.png)
@@ -54,8 +61,12 @@ Using a cointegrated pair (WTI Crude Oil, Brent Crude Oil) the following results
 ![Figure_4](assets/Figure_4.png)
 ![Figure_4_1](assets/Figure_4.1.png)
 
+Clearly, the cointegrated pair, using the same parameters, performed much better than the correlated pair. The parameters for each individual pair could still be tuned to improve performance, but when the same parameters are used, cointegration is the correct approach.
+
 ### Position Sizing
+One way I wanted to explore improving returns, was deducing a better method for position sizing. Just splitting the long and short position 50/50 didn't quite make sense to me, as the weighting could be optimized by checking how far the price for each individual security was off of it's longer term average. Thus, I experimented with this theory by implementing 50 day simple moving averages for both securities, and weighting the security that was farther off it's average slightly heavier, and vice-versa. We would assume it is more likely have a greater change if it was farther off it's SMA (that would result in more profit). The results can be shown below:
 ![Figure_5](assets/Figure_5.png)
 ![Figure_5_1](assets/Figure_5.1.png)
+Clearly, the results have improved greatly, still without any specific parameter tuning to the z-score bounds. I would like to explore this topic even deeper in the future, and will talk through some other extensions I would like to continue making to this project.
 
 ### Further Thoughts
