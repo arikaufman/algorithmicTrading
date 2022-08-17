@@ -28,15 +28,15 @@ We will now move on to the main experimentation done, which was in pairs Trading
 
 ## Pairs Trading
 ### Background
-Pairs trading is a strategy for heding of risk, which involves mathing of the short person with the long position in two underlying securities with a high positive correlation. This offseting of the long and short position is the basis for hedging, and provides profits even with market neutrality. 
+Pairs trading is a strategy for hedging of risk, which involves matching of the short person with the long position in two underlying securities with a high positive correlation. This offseting of the long and short position is the basis for hedging, and provides profits even with market neutrality. 
 
 The basis of this model is high correlation between the two underlying securities. Thus, the first thing done was to determine correlations between different securities in the same sectors. Once a pair of stocks is identified, whenever the two stocks appear to no longer be correlated, the overpriced stock is shorted, and the undervalued security is bought, assuming that they will come back to the mean correlation, and profit can be made on the mean-reversion. There are two ways to identify this temporary lack of correlation. Either by purely checking the correlation, or using cointegration.
 
 At first, I tried incrementally deducing Pearson's Coefficients for different pairs of securities as shown in the ```DataPreProcessing.py``` file. This would yield results like the following: 
 ![Figure_1](assets/Figure_1.png)
-Looks great right! Pearson Coefficient hovering around 0.95 is very correlated. When this was inserted into my model, however, I was obtaining strange results, and the correlated stocks were not always mean reverting. I did a bit more reading and found that I should be using cointegration to deduce my security pairs.
+Looks great right! Pearson Coefficient hovering around 0.95 is very correlated. When this was inserted into my model, however, I was obtaining strange results (shown below), and the correlated stocks were not always mean reverting. I did a bit more reading and found that I should be using cointegration to deduce my security pairs.
 
-Correlation shows the linear association between two random variables, or bivariate data. In contrast, two sets of variables are cointegrated, if a linear combination of those variables has a lower order of integration. The word "integration" refers to the integrated time series or order d, denoted by I(d). Now, price, rate, yield data can all be assumed as I(1), while returns, can be assumed as I(0) series. An I(0) series is referred to as stationary, which implied that the meanm and variance of the time series are finite and do not change with time. Thus, to solve for co-integration, we say:
+Correlation shows the linear association between two random variables, or bivariate data. In contrast, two sets of variables are cointegrated, if a linear combination of those variables has a lower order of integration. The word "integration" refers to the integrated time series or order d, denoted by I(d). Now, price, rate, yield data can all be assumed as I(1), while returns, can be assumed as I(0) series. An I(0) series is referred to as stationary, which implied that the mean and variance of the time series are finite and do not change with time. Thus, to solve for co-integration, we say:
 
 $x_t$ and $y_t$ are cointegrated ,if $x_t$ and $y_t$ are $I(1)$ series and $EB$ such that $z_t = x_t - By_t$ is an $I(0)$ series.
 
